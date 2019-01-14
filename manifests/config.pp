@@ -92,4 +92,10 @@ class fail2ban::config {
     chain => 'INPUT',
     jump  => $chain,
   }
+
+  firewall {'000 Check fail2ban (udp)':
+    chain => 'INPUT',
+    proto => 'udp',
+    jump  => $chain,
+  }
 }
