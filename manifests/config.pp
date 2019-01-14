@@ -75,6 +75,7 @@ class fail2ban::config {
       group   => $root_group,
       mode    => '0400',
       content => template("${module_name}/jail.local.erb"),
+      notify  => Service['fail2ban'],
     }
   }
 
