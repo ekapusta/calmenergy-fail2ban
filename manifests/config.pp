@@ -75,6 +75,7 @@ class fail2ban::config {
       group   => $root_group,
       mode    => '0400',
       content => template("${module_name}/jail.local.erb"),
+      notify  => Service['fail2ban'],
     }
   }
 
@@ -90,6 +91,12 @@ class fail2ban::config {
 
   firewall {'000 Check fail2ban':
     chain => 'INPUT',
+    jump  => $chain,
+  }
+
+  firewall {'000 Check fail2ban (udp)':
+    chain => 'INPUT',
+    proto => 'udp',
     jump  => $chain,
   }
 }
