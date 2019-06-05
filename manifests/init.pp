@@ -34,7 +34,7 @@
 class fail2ban (
   String $package_name                   = 'fail2ban',
   String $package_ensure                 = 'latest',
-  Optional[Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]]] $ignoreip = undef,
+  Optional[Array[Variant[Stdlib::IP::Address::V4, String]]] $ignoreip = undef,
 
   Optional[Enum['CRITICAL', 'ERROR',
                 'WARNING', 'NOTICE',

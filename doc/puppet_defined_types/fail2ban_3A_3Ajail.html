@@ -333,7 +333,7 @@ jail.local.</p>
         <span class='name'>ignoreip</span>
       
       
-        <span class='type'>(<tt>Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]]</tt>)</span>
+        <span class='type'>(<tt>Array[Variant[Stdlib::IP::Address::V4, String]]</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>[]</tt>)</em>
@@ -456,7 +456,7 @@ define fail2ban::jail (
   Optional[String]  $action    = undef,
   Optional[String]  $banaction = undef,
   Optional[Integer] $bantime   = undef,
-  Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]] $ignoreip = [],
+  Array[Variant[Stdlib::IP::Address::V4, String]] $ignoreip = [],
   Optional[Integer] $order     = undef,
   Optional[Enum[&#39;pyinotify&#39;, &#39;gamin&#39;, &#39;polling&#39;, &#39;systemd&#39;, &#39;auto&#39;]] $backend  = undef,
   ) {

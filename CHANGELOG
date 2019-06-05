@@ -1,3 +1,8 @@
+2019-02-09 Release 1.2.2
+- replace deprecated thrnio/ip lib with stdlib for validating IPs
+2019-01-14 Release 1.2.1
+- notify service on change config
+- add firewall chain for udp
 2018-07-19 Release 1.2.0
 - Made dependency o stahnma/epel contingent on being RedHat
 - Allowed Puppet 5

@@ -451,7 +451,7 @@ belonging to each fail2ban jail.</p>
         <span class='name'>ignoreip</span>
       
       
-        <span class='type'>(<tt>Optional[Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]]]</tt>)</span>
+        <span class='type'>(<tt>Optional[Array[Variant[Stdlib::IP::Address::V4, String]]]</tt>)</span>
       
       
         <em class="default">(defaults to: <tt>undef</tt>)</em>
@@ -597,7 +597,7 @@ jail.local.</p>
 class fail2ban (
   String $package_name                   = &#39;fail2ban&#39;,
   String $package_ensure                 = &#39;latest&#39;,
-  Optional[Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]]] $ignoreip = undef,
+  Optional[Array[Variant[Stdlib::IP::Address::V4, String]]] $ignoreip = undef,
 
   Optional[Enum[&#39;CRITICAL&#39;, &#39;ERROR&#39;,
                 &#39;WARNING&#39;, &#39;NOTICE&#39;,

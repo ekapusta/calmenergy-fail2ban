@@ -56,7 +56,7 @@ define fail2ban::jail (
   Optional[String]  $action    = undef,
   Optional[String]  $banaction = undef,
   Optional[Integer] $bantime   = undef,
-  Array[Variant[IP::Address::NoSubnet, IP::Address::V4::CIDR, String]] $ignoreip = [],
+  Array[Variant[Stdlib::IP::Address::V4, String]] $ignoreip = [],
   Optional[Integer] $order     = undef,
   Optional[Enum['pyinotify', 'gamin', 'polling', 'systemd', 'auto']] $backend  = undef,
   Optional[String] $comment = '',
